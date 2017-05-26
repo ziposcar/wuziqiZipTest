@@ -2,8 +2,10 @@ TOOLPATH  = ./tools/
 CODESPATH = ./codes/
 LIBSPATH  = ./libs/
 MAKE      = $(TOOLPATH)make.exe -r
-DEL       = del
+DEL       = del /Q
 COPY      = copy
+MAKEDIR   = mkdir
+REMOVEDIR = rd /S /Q
 
 default :
 	$(MAKE) lib
@@ -33,6 +35,7 @@ libAI.o : BasicClasses.o Node.o weight.o GetWeightAll.o GameTree.o Board.o $(COD
 	g++ -c $(CODESPATH)libAI.cpp
 
 libAI.dll : libAI.o Makefile
+	$(MAKEDIR) libs || ($(REMOVEDIR) libs && $(MAKEDIR) libs)
 	ar -rc $(LIBSPATH)libAI.dll *.o
 
 Board2.o : $(CODESPATH)pve/Board2.cpp Makefile
@@ -59,7 +62,7 @@ pve :
 	$(MAKE) pve.exe
 
 clean :
-	$(DEL) /Q *.o
+	$(DEL) *.o
 	
 move :
 	$(COPY) /Y zipAI.exe D:\WandS\wuziqiAI\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\
