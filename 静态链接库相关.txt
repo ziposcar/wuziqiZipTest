@@ -1,0 +1,6 @@
+g++ / gcc
+	-c 得到.o可执行对象文件
+	-o (exe name) (.o/.c/.cpp) (.o/.c/.cp) 链接得到可执行文件
+	-o (exe name) (.o/.c/.cpp) (./(.a)) 链接库文件
+ar
+	-rc (.a) (.o) 生成库文件

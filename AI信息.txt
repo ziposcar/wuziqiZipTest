@@ -1,0 +1,5 @@
+%temp%\board.dat
+
+n $whosePart
+(nxn)由空格和回车隔开
+//
