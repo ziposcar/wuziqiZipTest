@@ -22,6 +22,8 @@ windowsNT + MinGW（主要也只用到了g++和ar命令，所以linux平台的�
 
 打开 pve.exe 文件后，先输入每一步棋的间隔毫秒数，再分别输入先后手AI程序的文件名（不包括后缀.exe）。
 
+文件夹中 old1.exe 和 old2.exe 文件为我提供的早期的AI程序供大家测试。
+
 ### 约定
 
 棋盘文件存储在win环境变量 %temp% 下的 board.dat 中，原则上对AI只读不可写。 .dat 文件格式为：第一行两个整数 sizeOfBoard 和 whosePart 。 sizeOfBoard 代表棋盘大小，恒为15。 whosePart 代表轮到哪一方下棋，值为 1 代表接下来该先手方下棋， 值为 2 代表接下来该后手方下棋。
